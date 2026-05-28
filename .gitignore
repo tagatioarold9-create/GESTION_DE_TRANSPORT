@@ -1,0 +1,5 @@
+reseau.json
+*.exe
+c_transit
+*.o
+*.gch
