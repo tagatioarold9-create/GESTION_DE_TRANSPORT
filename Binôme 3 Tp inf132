@@ -1,0 +1,35 @@
+stats.c
+
+#include <stdio.h>
+#include "Stats.h"
+
+// Fonction pour calculer la durée totale d'une ligne
+int calculerDureeTotale(Station* stats) {
+    int dureeTotale = 0;
+    if(stats == NULL) {
+        return 0; // Si la liste est vide, la durée totale est 0
+    }
+    return stats->duree + calculerDureeTotale(stats->suiv); // Additionne la durée actuelle à la durée
+totale des éléments suivants
+}
+
+int compterStations(Station* stats) {
+    if(stats == NULL) {
+        return 0; // Si la liste est vide, il n'y a aucune station
+    }
+    return 1 + compterStations(stats->suiv); // Compte la station actuelle et continue avec les
+stations suivantes
+}
+
+stats.h
+
+#ifndef STATS-H
+#define STATS-H
+
+typedef struct Station
+{
+    int duree;
+    struct Station* suiv;
+} Station;
+
+#endif
